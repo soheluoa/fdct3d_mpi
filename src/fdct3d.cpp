@@ -641,7 +641,10 @@ int fdct3d_ifft(CpxNumTnsBlkd& W)
 		}		
 	 }
   }
-  fftwnd_destroy_plan(pxyb);  iC( MPI_Barrier(MPI_COMM_WORLD) );  tm1 = time(NULL);  //iC( PetscPrintf(MPI_COMM_WORLD, "  ifft compute2 %f\n", difftime(tm1,tm0)) );  tm0 = tm1;
+
+  fftwnd_destroy_plan(pxyb);
+  iC( MPI_Barrier(MPI_COMM_WORLD));
+  tm1 = time(NULL);  //iC( PetscPrintf(MPI_COMM_WORLD, "  ifft compute2 %f\n", difftime(tm1,tm0)) );  tm0 = tm1;
   
   //scale w's value by a complex exponent
   for(int i=0; i<e; i++)	 for(int j=0; j<f; j++)		for(int k=0; k<g; k++) {
@@ -657,5 +660,3 @@ int fdct3d_ifft(CpxNumTnsBlkd& W)
   
   return 0;
 }
-
-

@@ -15,9 +15,7 @@
 
 //----------------------------------------
 //forward transform, x->(c,w)
-int fdct3d_forward(int N1, int N2, int N3, int nbscales, int nbdstz_coarse,
-				   CpxNumTnsBlkd& x,
-				   CpxCrvletPrtd& c, CpxNumTnsBlkd& w);
+int fdct3d_forward(int N1, int N2, int N3, int nbscales, int nbdstz_coarse, CpxNumTnsBlkd& x, CpxCrvletPrtd& c, CpxNumTnsBlkd& w);
 //this function performs the forward curvelet transform
 //INPUTS:
 //  N1,N2,N3 -- the size of the input data
@@ -29,9 +27,8 @@ int fdct3d_forward(int N1, int N2, int N3, int nbscales, int nbdstz_coarse,
 //  w -- the wavelet coeffients at the finest level, N1 by N2 by N3 tensor
 
 //inverse transform (c,w)->x
-int fdct3d_inverse(int N1, int N2, int N3, int nbscales, int nbdstz_coarse,
-				   CpxCrvletPrtd& c, CpxNumTnsBlkd& w,
-				   CpxNumTnsBlkd& x);
+
+int fdct3d_inverse(int N1, int N2, int N3, int nbscales, int nbdstz_coarse, CpxCrvletPrtd& c, CpxNumTnsBlkd& w, CpxNumTnsBlkd& x);
 //this function performs the inverse curvelet transform
 //INPUTS:
 //  N1,N2,N3 -- the size of the input data
@@ -46,7 +43,7 @@ int fdct3d_inverse(int N1, int N2, int N3, int nbscales, int nbdstz_coarse,
 //for the curvelet transform, extract the freqency center and grid size for each curvelet
 int fdct3d_param(  int N1, int N2, int N3, int nbscales, int nbdstz_coarse, 
 				   vector< vector<double> >& fxs, vector< vector<double> >& fys, vector< vector<double> >& fzs,
-				   vector< vector<int   > >& nxs, vector< vector<int   > >& nys, vector< vector<int   > >& nzs);
+				   vector< vector<int   > >& nxs, vector< vector<int   > >& nys, vector< vector<int > >& nzs);
 //this function obtains auxiliary information about curvelet transform 
 //INPUTS:
 //  N1,N2,N3 -- the size of the input data
